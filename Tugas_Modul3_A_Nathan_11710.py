@@ -71,11 +71,10 @@ if uploaded_file is not None:
     st.write("<h3 style='text-align: center; color: #007366;'>Data yang diupload:</h3>", unsafe_allow_html=True)
     st.dataframe(input_data)
 
-    model_directory = r"C:\Users\Lenovo\Downloads\Supervised Learning (Praktek)\Model Suprevised Learning (Praktek)\Tugas3_A_11710"
-    model_path = os.path.join(model_directory, r'SVR_IPK_model.pkl')
+    model = r'SVR_IPK_model.pkl'
 
-    if os.path.exists(model_path):
-        with open(model_path, 'rb') as f:
+    if os.path.exists(model):
+        with open(model, 'rb') as f:
             loaded_model = pickle.load(f)
         
         scaler = loaded_model[0]
